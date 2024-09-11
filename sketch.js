@@ -1,4 +1,4 @@
-let myFont,myButton,myRndNum;
+let myFont,myButton,myRndNum, fact;
 let myFacts = [
   "I am a teacher",
   "I have 4 daughters",
@@ -12,6 +12,7 @@ function setup() {
   myFont = loadFont("guerilla.ttf")
   textFont(myFont)
   buttonStuff();
+   fact = "A fact will show here"
 }
 function draw() {
   background("#FFCAD4");
@@ -19,13 +20,13 @@ function draw() {
 }
 
 function createRndNum(){
-  myRndNum = Math.random() * 10;
+  myRndNum = Math.random() * 5;
   myRndNum = Math.floor(myRndNum)
 
 }
 function spitFacts(){
   createRndNum()
-  text(myFacts[myRndNum] , 10 , 200)
+  fact = myFacts[myRndNum]
 }
 
 function buttonStuff(){
@@ -49,4 +50,7 @@ function textStuff(){
   
   text("Corbin Boughen",10,50)
   pop()
+  textSize(20)
+ 
+  text(fact,10,200)
 }//end function
