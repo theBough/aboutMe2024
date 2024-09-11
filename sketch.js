@@ -1,11 +1,42 @@
+let myFont,myButton,myRndNum;
+let myFacts = [
+  "I am a teacher",
+  "I have 4 daughters",
+  "I coach Football",
+  "I don't care about cheese",
+  "I showed the class that one movie, that one time, or whatever, Alpha go.  - Jayden"
+]
+
 function setup() {
   createCanvas(400, 400);
+  myFont = loadFont("guerilla.ttf")
+  textFont(myFont)
+  buttonStuff();
 }
-
 function draw() {
   background("#FFCAD4");
   textStuff();
 }
+
+function createRndNum(){
+  myRndNum = Math.random() * 10;
+  myRndNum = Math.floor(myRndNum)
+
+}
+function spitFacts(){
+  createRndNum()
+  text(myFacts[myRndNum] , 10 , 200)
+}
+
+function buttonStuff(){
+  myButton = createButton("Click to see a fact")
+  myButton.position(100,100);
+  myButton.style("cursor", "ppointer");
+  myButton.style("background-color", "#e4c1f9");
+  myButton.mousePressed(spitFacts)
+  
+}//end buttonStuff
+
 function textStuff(){
   push()
   fill("#D8E2DC")
@@ -15,6 +46,7 @@ function textStuff(){
   
   push()
   fill("#9D8189")
+  
   text("Corbin Boughen",10,50)
   pop()
 }//end function
